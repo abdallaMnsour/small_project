@@ -60,7 +60,7 @@ if (isset($_GET['page'])) {
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary my-nav">
+<nav class="navbar navbar-expand-lg bg-body-tertiary my-nav p-3">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><?= $user_bool ? $user['name'] : 'Hello user' ?></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,11 +93,39 @@ if (isset($_GET['page'])) {
         </div>
     </div>
     <div class="d-flex">
-        <?php if ($user_bool) : ?>
-            <a href="login/logout.php" class="btn btn-primary">logout</a>
+        <?php if ($user_bool && $user['priv'] == '1') : ?>
+            <a href="admin/products.php" class="btn btn-primary">Edit products</a>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete">
+                Logout
+            </button>
+        <?php elseif ($user_bool) : ?>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete">
+                Logout
+            </button>
         <?php else : ?>
-            <a href="login/login.php" class="btn btn-primary">login</a>
-            <a href="login/register.php" class="btn btn-primary">register</a>
+            <a href="login/login.php" class="btn btn-primary">Login</a>
+            <a href="login/register.php" class="btn btn-primary">Register</a>
         <?php endif; ?>
     </div>
 </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="deleteLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="deleteLabel">are you sure you want to log-out ?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                if you click on "Yes" you will log-out from our site
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="functions/users/logout.php" class="btn btn-danger">Yes</a>
+            </div>
+        </div>
+    </div>
+</div>
