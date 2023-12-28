@@ -40,8 +40,8 @@ if (isset($_GET['page'])) {
         $page_acc = 'active';
     } else if ($_GET['page'] == 'products') {
         $page_pro = 'active';
-    } else if ($_GET['page'] == 'cart') {
-        $page_cart = 'active';
+    } else if ($_GET['page'] == 'card') {
+        $page_card = 'active';
     }
 }
 
@@ -79,7 +79,7 @@ if (isset($_GET['page'])) {
                         <a class="nav-link <?= $page_acc ?? '' ?>" href="user.php?page=account">Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= $page_cart ?? '' ?>" href="carts.php?page=cart">Cart</a>
+                        <a class="nav-link <?= $page_card ?? '' ?>" href="cards.php?page=card">Card</a>
                     </li>
                 <?php else : ?>
                     <li class="nav-item">
