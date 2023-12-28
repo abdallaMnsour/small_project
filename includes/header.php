@@ -95,6 +95,7 @@ if (isset($_GET['page'])) {
     <div class="d-flex">
         <?php if ($user_bool && $user['priv'] == '1') : ?>
             <a href="admin/products.php" class="btn btn-primary">Edit products</a>
+            <a href="admin/users.php" class="btn btn-primary">Edit users</a>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete">
                 Logout

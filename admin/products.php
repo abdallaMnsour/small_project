@@ -137,7 +137,7 @@ if (isset($_SESSION['errors'])) {
             </form>
         </div>
     </div>
-    <a href="../" class="btn btn-primary">Back</a>
+    <a href="../" class="btn btn-primary mt-3">Back to the site</a>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

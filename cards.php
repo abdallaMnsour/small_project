@@ -23,6 +23,7 @@ if (!$user_bool) {
                         <h5 class="card-title"><?= $product['name'] ?></h5>
                         <p class="card-text"><?= $product['description'] ?></p>
                         <p class="card-text"><small class="text-body-secondary"><?= $product['salary'] ?></small></p>
+                        <a href="functions/cards/delete.php?id=<?= $product['id'] ?>" class="btn btn-primary">delete</a>
                     </div>
                 </div>
             </div>
