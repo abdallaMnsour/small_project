@@ -16,6 +16,7 @@ if (isset($_SESSION['user_login']) && $_SESSION['user_login']['priv'] == 0) {
     }
 
     session_destroy();
+
     if (isset($_COOKIE['user_login'])) {
         setcookie('user_login', '', 123, '/');
     }
@@ -23,7 +24,13 @@ if (isset($_SESSION['user_login']) && $_SESSION['user_login']['priv'] == 0) {
     header('location: ../../');
     exit;
 } else if ($_SESSION['user_login']['priv'] == 1) {
-    $_SESSION['error_delete_admin'] = 'you can\'t log out. you are admin !';
+
+    session_destroy();
+
+    if (isset($_COOKIE['user_login'])) {
+        setcookie('user_login', '', 123, '/');
+    }
+
     header('location: ../../');
     exit;
 } else {
